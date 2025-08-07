@@ -1,6 +1,7 @@
 # Technical Exercise
 
-(HTML RENDERING)
+## HTML RENDERING
+
 In this project, I created a Tinder-like web application for cats with the integration of CATAAS API.
 You can swipe left and right or click the buttons to make your choice.
 
