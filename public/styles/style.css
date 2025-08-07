@@ -1,0 +1,63 @@
+
+.card-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+  font-size: 130px;
+  transition: transform 0.3s, opacity 0.3s ease;
+}
+.card:not(:last-child) {
+  top: 5px;
+}
+
+img{
+  width: 300px;
+  height: 300px;
+  user-drag: none;
+    -webkit-user-select: none; /* Safari, Chrome */
+    -webkit-user-drag: none;
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* CSS3 */
+}
+
+.loading {
+  text-align: center;
+  height: 100vh;
+}
+
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.liked-img{
+  height: 300px;
+  width: 300px;
+}
