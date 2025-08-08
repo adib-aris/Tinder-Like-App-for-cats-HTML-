@@ -1,22 +1,24 @@
-main {
+.body-index {
   justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f0f0f0;
-    overflow: hidden;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  overflow: hidden;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+.header-container {
+  height: 20vh;
+  padding: 20px;
+}
+
+.content-container {
+  height: 60vh;
 }
 
 .card-container {
   position: relative;
   width: 300px;
-  height: 400px;
+  height: 30vh;
 }
 .card {
   position: absolute;
@@ -30,14 +32,13 @@ body {
   color: rgba(0, 0, 0, 0.3);
   user-select: none;
   font-size: 130px;
-  transition: transform 0.3s, opacity 0.3s ease;  
+  transition: transform 0.3s, opacity 0.3s ease;
 }
 .card:not(:last-child) {
   top: 5px;
 }
 
 img {
-  user-drag: none;
   -webkit-user-select: none; /* Safari, Chrome */
   -webkit-user-drag: none;
   -khtml-user-select: none; /* Konqueror */
@@ -48,7 +49,7 @@ img {
 
 .card-img {
   width: 300px;
-  height: 400px;
+  height: 30vh;
   object-fit: contain;
 }
 
@@ -78,30 +79,34 @@ img {
 }
 
 .demo-cat {
- width: 200px;
- height: 200px;
- border-radius: 50%;
+  width: 15vh;
+  height: auto;
+  border-radius: 50%;
 }
 
-.icon {
-    height: 40%;
-  }
+.footer-container {
+  height: 20vh;
+}
 
-  .dislikelike-btn {
-    height: fit-content;
-  }
+.dislikelike-btn {
+  height: fit-content;
+}
 
 @media (max-width: 991px) {
-  main {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f0f0f0;
-    overflow: hidden;
+  .body-index {
+    height: 80vh;
+  }
+
+  .content-container {
+  height: 40vh;
+}
+
+  .title-div {
+    text-align: center;
   }
 
   .demo-cat {
-    height: 6rem;
+    height: 7vh;
     width: auto;
   }
 
@@ -113,5 +118,4 @@ img {
   .title-div {
     margin-top: 10px;
   }
-  
 }
