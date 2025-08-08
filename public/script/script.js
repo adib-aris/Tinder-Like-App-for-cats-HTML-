@@ -6,6 +6,7 @@ var container = document.getElementById("cardContainer");
 var card;
 var cardContent;
 var img;
+const sensitivity = 100;
 
 async function getData() {
   for (i = 0; i < 10; i++) {
@@ -20,6 +21,9 @@ async function getData() {
       img.classList.add("card-img");
       img.src = catPics[i].url;
       img.alt = "Cat Picture " + (i + 1);
+      if (i>8) {
+        img.onload = removeLoader();
+      }
       cardContent.appendChild(img);
       card.appendChild(cardContent);
       container.prepend(card);
@@ -27,6 +31,13 @@ async function getData() {
       console.error(error);
     }
   }
+  const imgFirst = document.getElementsByClassName("card-img")[0];
+  const loaderContainer = document.getElementsByClassName("loader-container")[0];
+}
+
+function removeLoader() {
+  const loaderContainer = document.getElementsByClassName("loader-container")[0];
+  loaderContainer.remove();
 }
 
 getData();
@@ -78,8 +89,9 @@ container.addEventListener("touchend", (e) => {
   handleSwipe(deltaX);
 });
 function handleSwipe(deltaX) {
-  const sensitivity = 100;
+  if(currentCard.classList.contains("swiping")) return;
   if (deltaX > sensitivity) {
+    currentCard.classList.add("swiping");
     currentCard.style.transition = "transform 0.4s ease, opacity 0.4s ease";
     currentCard.style.transform = `translateX(${
       deltaX > 0 ? 1000 : -1000
@@ -96,6 +108,7 @@ function handleSwipe(deltaX) {
     }, 400);
     if (container.children.length === 1) result();
   } else if (deltaX < -sensitivity) {
+    currentCard.classList.add("swiping");
     currentCard.style.transition = "transform 0.4s ease, opacity 0.4s ease";
     currentCard.style.transform = `translateX(${
       deltaX > 0 ? 1000 : -1000
