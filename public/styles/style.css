@@ -1,3 +1,18 @@
+main {
+  justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
 .card-container {
   position: relative;
   width: 300px;
@@ -15,7 +30,7 @@
   color: rgba(0, 0, 0, 0.3);
   user-select: none;
   font-size: 130px;
-  transition: transform 0.3s, opacity 0.3s ease;
+  transition: transform 0.3s, opacity 0.3s ease;  
 }
 .card:not(:last-child) {
   top: 5px;
@@ -63,11 +78,20 @@ img {
 }
 
 .demo-cat {
- width: 300px;
- height: auto;
+ width: 200px;
+ height: 200px;
+ border-radius: 50%;
 }
 
-@media (max-width: 575px) {
+.icon {
+    height: 40%;
+  }
+
+  .dislikelike-btn {
+    height: fit-content;
+  }
+
+@media (max-width: 991px) {
   main {
     justify-content: center;
     align-items: center;
@@ -77,7 +101,7 @@ img {
   }
 
   .demo-cat {
-    height: 60px;
+    height: 6rem;
     width: auto;
   }
 
@@ -89,4 +113,5 @@ img {
   .title-div {
     margin-top: 10px;
   }
+  
 }

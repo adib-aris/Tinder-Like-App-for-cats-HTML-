@@ -1,29 +1,28 @@
 const API_URL = "https://cataas.com/cat";
 const catPics = [];
+let i = 0;
+var resultAxios;
+var container = document.getElementById("cardContainer");
+var card;
+var cardContent;
+var img;
 
 async function getData() {
-  for (let index = 0; index < 10; index++) {
+  for (i = 0; i < 10; i++) {
     try {
-      const result = await axios.get(API_URL);
-      catPics.push({ url: result.data.url });
-      const container = document.getElementById("cardContainer");
-      var card = document.createElement("div");
+      resultAxios = await axios.get(API_URL);
+      catPics.push({ url: resultAxios.data.url });
+      card = document.createElement("div");
       card.classList.add("card");
-      var cardContent = document.createElement("div");
+      cardContent = document.createElement("div");
       cardContent.classList.add("cardContent");
-      var img = document.createElement("img");
+      img = document.createElement("img");
       img.classList.add("card-img");
-      img.src = catPics[index].url;
-      img.alt = "Cat Picture " + (index + 1);
-      if(index>7){
-        img.loading = "eager";
-      }
-      else{
-        img.loading = "lazy";
-      }
+      img.src = catPics[i].url;
+      img.alt = "Cat Picture " + (i + 1);
       cardContent.appendChild(img);
       card.appendChild(cardContent);
-      container.appendChild(card);
+      container.prepend(card);
     } catch (error) {
       console.error(error);
     }
@@ -32,7 +31,6 @@ async function getData() {
 
 getData();
 
-const container = document.getElementById("cardContainer");
 let isDragging = false;
 let startX = 0;
 let currentCard = null;
