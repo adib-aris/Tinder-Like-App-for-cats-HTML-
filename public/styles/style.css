@@ -95,6 +95,7 @@ img {
 @media (max-width: 991px) {
   .body-index {
     height: 90vh;
+    overflow: hidden;
   }
 
  .header-container {
@@ -105,6 +106,9 @@ img {
   height: 40vh;
 }
 
+ .footer-container {
+  height: 30vh;
+}
   .title-div {
     text-align: center;
   }
