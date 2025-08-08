@@ -12,8 +12,15 @@ async function getData() {
       var cardContent = document.createElement("div");
       cardContent.classList.add("cardContent");
       var img = document.createElement("img");
+      img.classList.add("card-img");
       img.src = catPics[index].url;
       img.alt = "Cat Picture " + (index + 1);
+      if(index>7){
+        img.loading = "eager";
+      }
+      else{
+        img.loading = "lazy";
+      }
       cardContent.appendChild(img);
       card.appendChild(cardContent);
       container.appendChild(card);

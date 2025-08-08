@@ -1,4 +1,3 @@
-
 .card-container {
   position: relative;
   width: 300px;
@@ -22,21 +21,20 @@
   top: 5px;
 }
 
-img{
-  width: 300px;
-  height: 300px;
+img {
   user-drag: none;
-    -webkit-user-select: none; /* Safari, Chrome */
-    -webkit-user-drag: none;
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE */
-    user-select: none; /* CSS3 */
+  -webkit-user-select: none; /* Safari, Chrome */
+  -webkit-user-drag: none;
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE */
+  user-select: none; /* CSS3 */
 }
 
-.loading {
-  text-align: center;
-  height: 100vh;
+.card-img {
+  width: 300px;
+  height: 400px;
+  object-fit: contain;
 }
 
 .gradient-background {
@@ -57,7 +55,38 @@ img{
   }
 }
 
-.liked-img{
-  height: 300px;
-  width: 300px;
+.liked-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.demo-cat {
+ width: 300px;
+ height: auto;
+}
+
+@media (max-width: 575px) {
+  main {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+
+  .demo-cat {
+    height: 60px;
+    width: auto;
+  }
+
+  .liked-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .title-div {
+    margin-top: 10px;
+  }
 }
