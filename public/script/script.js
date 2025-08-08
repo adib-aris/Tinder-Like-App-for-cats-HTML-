@@ -21,7 +21,7 @@ async function getData() {
       img.classList.add("card-img");
       img.src = catPics[i].url;
       img.alt = "Cat Picture " + (i + 1);
-      if (i>8) {
+      if (i<1) {
         img.onload = removeLoader();
       }
       cardContent.appendChild(img);
